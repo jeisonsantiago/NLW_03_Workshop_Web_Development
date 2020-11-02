@@ -1,0 +1,93 @@
+#page-orphanages{
+    width: 100%;
+    /* height: 100%; */
+    height: 100vh;
+    display: flex;
+    background-color: #DDD;
+}
+
+/* desktop version */
+@media (min-width: 760px){
+    aside{
+        width: clamp(20rem,24vw,40rem);
+        background: linear-gradient(329.54deg, #5cdb95ff 0%, rgb(65, 182, 118) 100%) no-repeat;
+        /* padding: clamp(4rem,5vw,6rem); */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6rem;
+    }
+    
+    header h1{
+        margin-top: 6rem;
+    }
+
+    header p{
+        margin-top: 2rem;
+    }
+    
+    .logo{
+        width: 12rem;
+    }
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 15vh;
+        background-color:#05386bff;
+        padding: 2rem 4rem;
+        line-height: 1.4;
+        border-top: 4px solid white;
+    }
+
+    #mapid{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* popup */
+    .leaflet-popup-content-wrapper{
+        border: 1px solid #cad2d3ff;
+    }
+
+    .leaflet-popup-tip-container{
+        display: none;
+    }
+
+    .leaflet-popup-content{
+        display: flex;
+        flex-direction: row;
+
+        margin: 1rem 1rem 1rem 1.5rem;
+        color: #05386bff;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .leaflet-popup-content-wrapper button{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #379683ff;
+        border: none;
+        /* padding: 2px; */
+    }
+
+    .leaflet-popup-content-wrapper button:hover{
+        background-color: #27b498ff;
+    }
+
+    .leaflet-popup-content-wrapper img{
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}
+

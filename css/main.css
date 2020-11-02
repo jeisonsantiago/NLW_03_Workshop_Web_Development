@@ -1,0 +1,31 @@
+/*  */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 10px;
+}
+
+body{
+    height: 100vh;
+    color: white;
+    background: #EBF2F5;
+    /* min-height: 600px; */
+    max-height: 600px;
+} 
+
+body, input, button, textarea {
+    font-size: 1.8rem;
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Nunito',sans-serif;
+
+    /* same as above */
+    /* font: 400 18px/1 'Nunito',sans-serif; */
+}
+
+a{
+    text-decoration: none;    
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Orphanages</title>
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- layout related -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/page-orphanages.css">
+</head>
+
+<body>
+    <div id="page-orphanages">
+
+        <aside>
+            <header>
+                <a href="./index.html">
+                <img class="logo" src="./images/logo.png" alt="">
+                </a>
+                <span>
+                    <h1>
+                        Choose a shelter to visit
+                    </h1>
+                    <p>
+                        Lots of children are waiting for you XD
+                    </p>
+                </span>
+            </header>
+            <footer>
+                <h2>Calgary</h2>
+                <h3>Alberta CA</h2>
+            </footer>
+        </aside>
+        <div id="mapid"></div>
+    </div>    
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+    <script src="./js/page-orphanages.js"></script>
+</body>
+
+</html>
