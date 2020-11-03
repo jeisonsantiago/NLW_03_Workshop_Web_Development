@@ -50,12 +50,4 @@ const imageList = [
       "url": "https://unsplash.com/photos/CMWRIzyMKZk",
       "download_url": "https://picsum.photos/id/1009/5000/7502"
     }
-    // {
-    //   "id": "101",
-    //   "author": "Christian Bardenhorst",
-    //   "width": 2621,
-    //   "height": 1747,
-    //   "url": "https://unsplash.com/photos/8lMhzUjD1Wk",
-    //   "download_url": "https://picsum.photos/id/101/2621/1747"
-    // }
   ]

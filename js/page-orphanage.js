@@ -13,18 +13,28 @@ for(i in imageList){
     buttonList[i].children[0].style.opacity = 0.6;
 }
 
+// set first image opacity to 1
+buttonList[0].children[0].style.opacity = 1;
+
+function setButtonsOpacity(){
+    for(i in imageList){
+        buttonList[i].children[0].style.opacity = 0.6;
+    }   
+}
 
 // set click event for all buttons, so once clicked
 // it will replace the main image
 function btnClicked(event){
     let imageURL = event.target.src;
+    
     if(imageURL){
         mainImage.src = imageURL;
+        setButtonsOpacity();
+        event.target.style.opacity = 1;
     }
 }
 
-// set map 
-
+// set map and current shelter/orphanage location
 var mymap = L.map('mapid').setView([50.981343945663895,-473.7937735564936], 10);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamVpc29uIiwiYSI6ImNrZzh1ZHFjYzAzMDIycnAyMHlwMHMxa3UifQ.QQY3YcaDqcz6607G598n7Q', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -36,7 +46,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'your.mapbox.access.token',
 }).addTo(mymap);
 
-
 // set map icon
 const orphanageIcon = L.icon({
     iconUrl:'./images/marker.png',
@@ -46,6 +55,6 @@ const orphanageIcon = L.icon({
     popupAnchor:  [190,-30]
 });
 
-
 const marker = L.marker([50.981343945663895,-473.7937735564936],{icon:orphanageIcon})
-marker.addTo(mymap).bindPopup(popUp);
+marker.addTo(mymap);
+

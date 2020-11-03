@@ -34,6 +34,8 @@ const ic = L.marker([50.981343945663895,-473.7937735564936],{icon:orphanageIcon}
 ic.addTo(mymap).bindPopup(popUp);
 
 
+
+
 // this.addMarker('teta',1,1);
 // const orphanates = document.querySelectorAll('#page-orphanages span');
 
