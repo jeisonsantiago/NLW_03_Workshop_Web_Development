@@ -89,5 +89,26 @@
         width: 1.4rem;
         height: 1.4rem;
     }
+
+    #add-orphanage-btn{
+        position: fixed;
+        bottom: 9rem;
+        right: 9rem;
+        z-index: 999;
+    }
+
+    #add-orphanage-btn button{
+        width: 8rem;
+        height: 8rem;
+        border: 5px solid white;
+        border-radius: 4.5rem;
+        background: #05386bff;
+        cursor: pointer;
+    }
+    #add-orphanage-btn button img{
+        width: 5rem;
+        height: 5rem;
+        position: relative;
+    }
 }
 

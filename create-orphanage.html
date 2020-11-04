@@ -16,20 +16,19 @@
 
     <!-- layout related -->
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/page-orphanage.css">
+    <link rel="stylesheet" href="./css/page-create-orphanage.css">
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 
 <body>
-    <div id="page-orphanage">
+    <div id="page-create-orphanage">
         <aside>
             <header>
                 <a href="./index.html">
                     <img class="logo" src="./images/logo.png" alt="">
                 </a>
-
             </header>
             <footer>
-
                 <a class="backward-btn" href="./orphanages.html">
                     <button>
                         <img class="logo" src="./images/seta.png" alt="">
@@ -38,66 +37,72 @@
             </footer>
         </aside>
         <main>
-            <div class="orphanage-details">
-                <img id="mainImage" src="" alt="#">
-                <div class="orphanage-specifics">
-                    <div id="images">
-                        <button>
-                            <img src="" alt="1">
-                        </button>
-                        <button>
-                            <img src="" alt="2">
-                        </button>
-                        <button>
-                            <img src="" alt="3">
-                        </button>
-                        <button>
-                            <img src="" alt="4">
-                        </button>
-                        <button>
-                            <img src="" alt="5">
-                        </button>
-                        <button>
-                            <img src="" alt="6">
-                        </button>
-                    </div>
+            <div class="create-orphanage">
+                <form action="save-orphanage" method="POST">
 
-                    <h1>Name</h1>
+                    <h1>Info</h1>
+                    <hr>
                     <div class="map-container">
-                        <div id="mapid"></div>
+                        <div id="mapid">
+                            <input type="hidden" name="lat" value="lat">
+                            <input type="hidden" name="lng" value="lng">
+                        </div>
                         <footer>
-                            <a href="">Google routes</a>
+                            <h3>Click to add location</h3>
                         </footer>
                     </div>
-                    <hr>
-                    <h2>About</h2>
-                    <p>lalalalalalla lasAIHSIUHAIUShAIUHS
-                        AUishAIUSHIUAHSuiAHS
-                        AHsuiHAUISHAIUShA
-                        SHAUISHIUAHSIUAHUISHAIUSH UIHAUISh UIHAUISh
-                    </p>
-                    <div class="visit-details">
 
-                        <span hidden data-open-weekends="1"></span>
+                    <div class="input-block">
+                        <label for="institution-name">Institution Name</label>
+                        <input type="text" name="institution-name" required>
+                    </div>
 
-                        <div class="opening-hours">
-                            <img src="./images/clock.png" alt="clock">
-                            <h2>Test</h2>
+                    <div class="input-block">
+                        <label for="about">About <span>Max 300 characters</span></label>
+                        <textarea name="about" id="about" cols="20" rows="5" required></textarea>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="Photos">Photos</label>
+                        <div class="photos-url">
+                            <input type="text" name="photos" required>
+                            <img src="./images/delete.png" alt="">
                         </div>
-                        <div class="open-on-weekends">
-                            <img src="./images/exclamation.png" alt="exclamation">
-                            <h2>Test</h2>
+
+                        <button id="addimage-btn" type="button">+</button>
+                    </div>
+
+                    <h1>Visit</h1>
+                    <hr>
+
+                    <div class="input-block">
+                        <label for="sobre">How to</label>
+                        <textarea name="about" id="about" cols="20" rows="5" required></textarea>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="opening-hours">Opening Hours</label>
+                        <input type="text" id="opening-hours" name="opening-hours" required>
+                    </div>
+
+                    <div class="input-block">
+                        <label for="open-on-weekends">Open on Weekends</label>
+                        <div id="open-on-weekends">
+                            <button type="button">Yes</button>
+                            <button type="button">No</button>
                         </div>
                     </div>
-                    <button class="simple-btn">
-                        Contact
-                    </button>
-    
-                    <button class="simple-btn">
-                        Remove
-                    </button>
-                </div>
 
+                    <button type="submit">
+                        Send
+                    </button>
+
+                </form>
             </div>
         </main>
     </div>
@@ -106,8 +111,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-    <script src="./js/imagelist.js"></script>
-    <script src="./js/page-orphanage.js"></script>
+    <script src="./js/page-create-orphanage.js"></script>
 </body>
 
 </html>
