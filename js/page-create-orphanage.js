@@ -14,7 +14,95 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 const orphanageIcon = L.icon({
     iconUrl:'./images/marker.png',
     iconSize:[32,32],
-    iconAnchor:   [22, 94],
+    iconAnchor:   [16, 32],
     shadowAnchor: [0, 0],
     popupAnchor:  [190,-30]
 });
+
+
+// click setup to set the orphanage location on the map
+let currentMarker;
+
+mymap.on('click',getLatLng);
+
+function getLatLng(event){
+    let latlng = event.latlng;
+
+    if(!currentMarker && latlng){
+        currentMarker = L.marker([latlng.lat,latlng.lng],{icon:orphanageIcon})
+        currentMarker.addTo(mymap)
+    }else{
+        currentMarker.setLatLng([latlng.lat,latlng.lng])
+    }
+
+    console.log(currentMarker);
+}
+
+
+// photo url button and removal controls
+const btnAddPhotoURL = document.querySelector('#addimage-btn');
+
+const urlInput = document.querySelector('#photo-url-input');
+urlInput.children[1].onclick = autoRemove;
+
+const photosURLContainer = document.querySelector('.photos-url');
+
+btnAddPhotoURL.onclick = addURLInput;
+
+function addURLInput(){
+    let newURL = urlInput.cloneNode(true);
+    newURL.children[0].value = ""
+
+    // set auto remove
+    newURL.children[1].onclick = autoRemove;
+
+    photosURLContainer.appendChild(newURL);
+}
+
+function autoRemove(event){
+
+    // check how many input 
+    let urlinputs = document.querySelectorAll('#photo-url-input');
+    if(urlinputs.length == 1) return;
+    
+    photosURLContainer.removeChild(event.target.parentElement);
+}
+
+
+// open on weekend setup 
+let buttonYes = document.querySelector('#open-on-weekends button:nth-of-type(1)');
+let buttonNo = document.querySelector('#open-on-weekends button:nth-of-type(2)');
+
+buttonYes.onclick = toggleButtons;
+buttonNo.onclick = toggleButtons;
+
+let openOnWeekends = document.querySelector('#open-on-weekends span');
+
+function toggleButtons(event){
+    
+    // clear butons
+    buttonYes.classList.remove('active-btn');
+    buttonNo.classList.remove('active-btn');
+    
+    let element = event.target;
+    if(!element.classList.contains('active-btn')){
+        element.classList.add('active-btn');
+
+        if(element.textContent == "Yes"){
+            openOnWeekends.dataset.openOnWeekends = "1";
+        }else{
+            openOnWeekends.dataset.openOnWeekends = "0";
+        }
+    }
+}
+
+// validate send btn (awalys check input on front-end)
+var buttonSend = document.querySelector('button[type="submit"]');
+buttonSend.onclick = checkMarker;
+
+function checkMarker(){
+    if(!currentMarker) {
+        return false;
+    } 
+    return true;
+}

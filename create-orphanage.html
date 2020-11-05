@@ -38,7 +38,7 @@
         </aside>
         <main>
             <div class="create-orphanage">
-                <form action="save-orphanage" method="POST">
+                <form action="save-orphanage" method="GET">
 
                     <h1>Info</h1>
                     <hr>
@@ -70,8 +70,10 @@
                     <div class="input-block">
                         <label for="Photos">Photos</label>
                         <div class="photos-url">
+                            <div id="photo-url-input">
                             <input type="text" name="photos" required>
                             <img src="./images/delete.png" alt="">
+                            </div>
                         </div>
 
                         <button id="addimage-btn" type="button">+</button>
@@ -93,8 +95,9 @@
                     <div class="input-block">
                         <label for="open-on-weekends">Open on Weekends</label>
                         <div id="open-on-weekends">
-                            <button type="button">Yes</button>
+                            <button class="active-btn" type="button">Yes</button>
                             <button type="button">No</button>
+                            <span hidden data-open-on-weekends="1"></span>
                         </div>
                     </div>
 
