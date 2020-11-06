@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Orphanages</title>
 
+
     <!-- leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -15,17 +16,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
 
     <!-- layout related -->
-    <link rel="stylesheet" href="./public/css/main.css">
-    <link rel="stylesheet" href="./public/css/page-orphanages.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/page-orphanages.css">
 </head>
 
 <body>
-    <div id="page-orphanages">
 
+    <div id="page-orphanages">
         <aside>
             <header>
-                <a href="./index.html">
-                    <img class="logo" src="./public/images/logo.png" alt="">
+                <a href="/">
+                    <img class="logo" src="/images/logo.png" alt="">
                 </a>
                 <span>
                     <h1>
@@ -42,10 +43,21 @@
             </footer>
         </aside>
         <div id="mapid"></div>
+
+        {{!-- for loop to access data --}}
+        {{#each orphanages}}
+            <span class="data-orphanages" hidden 
+                data-id="{{this.id}}" 
+                data-name="{{this.name}}" 
+                data-lat="{{this.lat}}" 
+                data-lng="{{this.lng}}"
+            ></span>
+        {{/each}}
+
     </div>
-    <a id="add-orphanage-btn" href="./create-orphanage.html">
+    <a id="add-orphanage-btn" href="/create-orphanage">
         <button>
-            <img src="./public/images/plus.png" alt="">
+            <img src="/images/plus.png" alt="">
         </button>
     </a>
 
@@ -53,7 +65,7 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
 
-    <script src="./public/js/page-orphanages.js"></script>
+    <script src="/js/page-orphanages.js"></script>
 </body>
 
 </html>
